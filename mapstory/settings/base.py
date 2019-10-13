@@ -103,7 +103,6 @@ INSTALLED_APPS = tuple(installed_apps_list)
 INSTALLED_APPS += (
     'django_nose',
     'mapstory',
-    'django.contrib.webdesign',
     'mapstory.geogig',
     'icon_commons',
     'maploom',
