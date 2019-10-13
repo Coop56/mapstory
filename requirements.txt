@@ -27,8 +27,6 @@ selenium
 
 pandas==0.20.3
 
-django-transaction-hooks==0.2
-
 # CLI library used by some management commands
 pick
 

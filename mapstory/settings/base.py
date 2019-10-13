@@ -238,8 +238,7 @@ DATABASE_PORT = '5432'
 if DATABASE_PASSWORD:
     DATABASES = {
         'default': {
-            # we use transaction_hooks so we can attach on_commit actions
-            'ENGINE': 'transaction_hooks.backends.postgresql_psycopg2',
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'mapstory',
             'USER': 'mapstory',
             'PASSWORD': DATABASE_PASSWORD,
@@ -488,7 +487,7 @@ class DisableMigrations(object):
         return True
 
     def __getitem__(self, item):
-        return "notmigrations"
+        return None
 
 
 # Disable migrations only on tests
@@ -554,7 +553,7 @@ LOGGING = {
     'handlers': {
         'null': {
             'level': 'ERROR',
-            'class': 'django.utils.log.NullHandler',
+            'class': 'logging.NullHandler',
         },
         'console': {
             'level': 'DEBUG',
